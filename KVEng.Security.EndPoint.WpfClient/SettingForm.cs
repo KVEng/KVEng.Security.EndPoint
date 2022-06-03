@@ -15,7 +15,7 @@ namespace KVEng.Security.EndPoint.WpfClient
             AddSystemEventTriger();
         }
 
-        private IVerifiable v;
+        private IVerifiable? v;
 
         private void BtnGenOtp_Click(object sender, EventArgs e)
         {
@@ -49,25 +49,19 @@ namespace KVEng.Security.EndPoint.WpfClient
             }
         }
 
-        private void SettingForm_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void NotifyIcon_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            // this.Show();
             this.Visible = true;
             this.WindowState = FormWindowState.Normal;
             this.ShowInTaskbar = true;
             NotifyIcon.Visible = false;
         }
 
-        private void Quit()
+        private void SafeQuit()
         {
-            this.Close();
-
+            Unkillable.MakeProcessKillable();
             App.Quit();
+            Application.Exit();
         }
 
         private void AddSystemEventTriger()
@@ -100,9 +94,7 @@ namespace KVEng.Security.EndPoint.WpfClient
 
         private void BtnQuit_Click(object sender, EventArgs e)
         {
-            Unkillable.MakeProcessKillable();
-            App.Quit();
-            Application.Exit();
+            SafeQuit();
         }
 
         private void SettingForm_FormClosing(object sender, FormClosingEventArgs e)

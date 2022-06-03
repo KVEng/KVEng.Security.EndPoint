@@ -85,7 +85,6 @@
             this.Name = "SettingForm";
             this.Text = "SettingForm";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.SettingForm_FormClosing);
-            this.Load += new System.EventHandler(this.SettingForm_Load);
             this.SizeChanged += new System.EventHandler(this.SettingForm_SizeChanged);
             this.ResumeLayout(false);
 
