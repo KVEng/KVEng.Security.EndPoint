@@ -11,11 +11,19 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="KSE-ban.png" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="VirtualDesktop.WPF" Version="5.0.5" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\KVEng.Security.EndPoint.Library\KVEng.Security.EndPoint.Library.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="KSE-ban.png" />
   </ItemGroup>
 
 </Project>

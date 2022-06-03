@@ -14,21 +14,21 @@
             <ColumnDefinition Width="97*"/>
             <ColumnDefinition Width="52*"/>
         </Grid.ColumnDefinitions>
-        <Grid Margin="30,25,582,569" Grid.ColumnSpan="2">
+        <Grid Margin="30,25,367,574" Grid.ColumnSpan="2">
             <Grid.RowDefinitions>
                 <RowDefinition Height="19*"/>
                 <RowDefinition Height="21*"/>
                 <RowDefinition Height="24*"/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="383*"/>
-                <ColumnDefinition Width="401*"/>
+                <ColumnDefinition Width="57*"/>
+                <ColumnDefinition Width="61*"/>
             </Grid.ColumnDefinitions>
-            <Label Content="KVEng Security EndPoint" HorizontalAlignment="Left" Margin="43,0,0,0" VerticalAlignment="Center" FontSize="24" FontWeight="Bold" Grid.ColumnSpan="2" Height="42" Width="290"/>
-            <TextBox x:Name="TxtOtp" TextWrapping="Wrap" Grid.Row="1" HorizontalContentAlignment="Left" VerticalAlignment="Center" Height="18"/>
+            <TextBox x:Name="TxtOtp" TextWrapping="Wrap" Grid.Row="1" HorizontalContentAlignment="Stretch" VerticalAlignment="Center" Height="18" VerticalContentAlignment="Stretch"/>
             <Button x:Name="BtnExit" Content="Exit" Click="BtnExit_Click" Grid.Row="2" VerticalAlignment="Center" Height="20"/>
-            <Button x:Name="BtnOtpVerify" Content="Verify OTP" Click="BtnOtpVerify_Click" Grid.Row="1" VerticalAlignment="Center" Grid.ColumnSpan="2" Height="20" Margin="183,0,0,0"/>
-            <Button x:Name="BtnUnsafeExit" Content="Exit (Unsafe)" Click="BtnUnsafeExit_Click" Grid.Row="2" VerticalAlignment="Center" Grid.ColumnSpan="2" Height="20" Margin="183,0,0,0"/>
+            <Button x:Name="BtnOtpVerify" Content="Verify OTP" Click="BtnOtpVerify_Click" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Stretch" Margin="0,0,0,0" Width="Auto" VerticalAlignment="Center"/>
+            <Button x:Name="BtnUnsafeExit" Content="Exit (Unsafe)" Click="BtnUnsafeExit_Click" Grid.Row="2" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Center"/>
+            <Image Source="/KSE-ban.png" Grid.ColumnSpan="2" Height="Auto" Width="Auto"/>
         </Grid>
 
     </Grid>
