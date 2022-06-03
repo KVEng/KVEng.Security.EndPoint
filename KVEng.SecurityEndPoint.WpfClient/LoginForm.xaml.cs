@@ -39,8 +39,18 @@ namespace KVEng.SecurityEndPoint.WpfClient
         #endregion
         private void BtnExit_Click(object sender, RoutedEventArgs e)
         {
-            Unkillable.MakeProcessKillable();
+            ExitThis(true);
+        }
+
+        private void ExitThis(bool isSafe)
+        {
+            if (isSafe)
+                Unkillable.MakeProcessKillable();
             Application.Current.Shutdown();
+        }
+        private void BtnUnsafeExit_Click(object sender, RoutedEventArgs e)
+        {
+            ExitThis(false);
         }
 
         private void Window_Deactivated(object sender, EventArgs e)
@@ -72,5 +82,11 @@ namespace KVEng.SecurityEndPoint.WpfClient
 #endif
         }
 
+        private void BtnOtpVerify_Click(object sender, RoutedEventArgs e)
+        {
+            if (TxtOtp.Text == "114514")
+                ExitThis(true);
+            MessageBox.Show("Wrong Password!", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+        }
     }
 }
