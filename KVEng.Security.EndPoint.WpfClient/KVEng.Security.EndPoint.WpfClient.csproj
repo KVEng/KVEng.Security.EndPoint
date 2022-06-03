@@ -10,11 +10,16 @@
 	  <RuntimeIdentifiers>win10-x64</RuntimeIdentifiers>
 	  <UseWindowsForms>True</UseWindowsForms>
 	  <ApplicationManifest>app.manifest</ApplicationManifest>
+	  <ApplicationIcon>kse.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>
     <None Remove="KSE-ban.png" />
     <None Remove="KSE-logo.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="kse.ico" />
   </ItemGroup>
 
   <ItemGroup>
