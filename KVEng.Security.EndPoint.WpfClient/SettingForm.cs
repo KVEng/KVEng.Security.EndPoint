@@ -24,16 +24,19 @@ namespace KVEng.Security.EndPoint.WpfClient
             var qr = new QRCodeForm(bytes.Base32ToString());
             qr.ShowDialog();
             qr.Dispose();
-            _login = new LoginForm(v);
-
         }
 
-        LoginForm _login;
         private void BtnRunLocker_Click(object sender, EventArgs e)
         {
-            if (_login == null)
+            if (v == null)
                 return;
-            _login.ShowDialog();
+            ShowLocker(v);
+        }
+        
+        private void ShowLocker(IVerifiable v)
+        {
+            var l = new LoginForm(v);
+            l.ShowDialog();
         }
 
         private void SettingForm_SizeChanged(object sender, EventArgs e)
@@ -85,9 +88,7 @@ namespace KVEng.Security.EndPoint.WpfClient
                 if (e.Reason == SessionSwitchReason.SessionLock)
                 {
                     // Lock
-                    if (_login != null)
-                        _login.ShowDialog();
-                        
+                    if (v != null) ShowLocker(v);
                 }
                 else if (e.Reason == SessionSwitchReason.SessionUnlock)
                 {
