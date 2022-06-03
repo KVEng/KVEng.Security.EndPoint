@@ -97,5 +97,13 @@ namespace KVEng.Security.EndPoint.WpfClient
             };
 
         }
+
+        private void BtnQuit_Click(object sender, EventArgs e)
+        {
+            Unkillable.MakeProcessKillable();
+            App.Quit();
+            this.Close();
+            Application.Exit();
+        }
     }
 }

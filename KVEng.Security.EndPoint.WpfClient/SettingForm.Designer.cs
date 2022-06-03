@@ -33,6 +33,7 @@
             this.BtnGenOtp = new System.Windows.Forms.Button();
             this.BtnRunLocker = new System.Windows.Forms.Button();
             this.NotifyIcon = new System.Windows.Forms.NotifyIcon(this.components);
+            this.BtnQuit = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // BtnGenOtp
@@ -62,11 +63,22 @@
             this.NotifyIcon.Visible = true;
             this.NotifyIcon.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.NotifyIcon_MouseDoubleClick);
             // 
+            // BtnQuit
+            // 
+            this.BtnQuit.Location = new System.Drawing.Point(463, 24);
+            this.BtnQuit.Name = "BtnQuit";
+            this.BtnQuit.Size = new System.Drawing.Size(145, 106);
+            this.BtnQuit.TabIndex = 2;
+            this.BtnQuit.Text = "Quit";
+            this.BtnQuit.UseVisualStyleBackColor = true;
+            this.BtnQuit.Click += new System.EventHandler(this.BtnQuit_Click);
+            // 
             // SettingForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 30F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1195, 846);
+            this.Controls.Add(this.BtnQuit);
             this.Controls.Add(this.BtnRunLocker);
             this.Controls.Add(this.BtnGenOtp);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -83,5 +95,6 @@
         private System.Windows.Forms.Button BtnGenOtp;
         private System.Windows.Forms.Button BtnRunLocker;
         private System.Windows.Forms.NotifyIcon NotifyIcon;
+        private System.Windows.Forms.Button BtnQuit;
     }
 }

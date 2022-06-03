@@ -68,7 +68,7 @@ namespace KVEng.Security.EndPoint.WpfClient
             if (isSafe)
                 Unkillable.MakeProcessKillable();
             this.Close();
-            
+
             // Application.Current.Shutdown();
         }
         private void BtnUnsafeExit_Click(object sender, RoutedEventArgs e)
@@ -128,6 +128,14 @@ namespace KVEng.Security.EndPoint.WpfClient
             s += " RELEASE";
 #endif
             return s;
+        }
+        
+        private void Window_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.System && e.SystemKey == Key.F4)
+            {
+                e.Handled = true;
+            }
         }
     }
 }
