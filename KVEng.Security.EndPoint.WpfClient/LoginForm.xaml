@@ -10,13 +10,13 @@
         Title="LoginForm"  WindowState="Maximized" WindowStartupLocation="CenterScreen" ShowInTaskbar="False" ResizeMode="NoResize" WindowStyle="None" Topmost="True" Deactivated="Window_Deactivated" Loaded="Window_Loaded" SizeChanged="Window_SizeChanged" StateChanged="Window_StateChanged" Icon="/KSE-logo.png">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="87*"/>
-            <RowDefinition Height="448*"/>
+            <RowDefinition Height="90*"/>
+            <RowDefinition Height="450*"/>
             <RowDefinition Height="2*"/>
             <RowDefinition Height="60"/>
-            <RowDefinition Height="134*"/>
+            <RowDefinition Height="130*"/>
             <RowDefinition Height="60"/>
-            <RowDefinition Height="134*"/>
+            <RowDefinition Height="130*"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
