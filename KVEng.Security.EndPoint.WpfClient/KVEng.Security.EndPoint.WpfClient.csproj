@@ -9,6 +9,7 @@
 	  <IncludeNativeLibrariesForSelfExtract>true</IncludeNativeLibrariesForSelfExtract>
 	  <RuntimeIdentifiers>win10-x64</RuntimeIdentifiers>
 	  <UseWindowsForms>True</UseWindowsForms>
+	  <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
 
   <ItemGroup>

@@ -10,14 +10,14 @@
         Title="LoginForm"  WindowState="Maximized" WindowStartupLocation="CenterScreen" ShowInTaskbar="False" ResizeMode="NoResize" WindowStyle="None" Topmost="True" Deactivated="Window_Deactivated" Loaded="Window_Loaded" SizeChanged="Window_SizeChanged" StateChanged="Window_StateChanged" Icon="/KSE-logo.png">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="10*"/>
-            <RowDefinition Height="40*"/>
-            <RowDefinition Height="10*"/>
-            <RowDefinition Height="20*"/>
-            <RowDefinition Height="10*"/>
-            <RowDefinition Height="20*"/>
-            <RowDefinition Height="50*"/>
-            <RowDefinition Height="10*"/>
+            <RowDefinition Height="87*"/>
+            <RowDefinition Height="448*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="134*"/>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="134*"/>
+            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="30*"/>
@@ -26,12 +26,12 @@
             <ColumnDefinition Width="50*"/>
             <ColumnDefinition Width="30*"/>
         </Grid.ColumnDefinitions>
-        <Image Source="/KSE-ban.png" Width="506" HorizontalAlignment="Center" Grid.RowSpan="3" Grid.ColumnSpan="3" Grid.Column="1"/>
-        <Button x:Name="BtnOtpVerify" Content="Verify OTP" Click="BtnOtpVerify_Click" Grid.Column="3" Width="Auto" VerticalAlignment="Center" Height="45" Grid.Row="3" HorizontalAlignment="Stretch" FontSize="22"/>
+        <Image Source="/KSE-ban.png" Width="520" HorizontalAlignment="Center" Grid.Column="1" Grid.ColumnSpan="3" Grid.Row="1"/>
+        <Button x:Name="BtnOtpVerify" Content="Verify OTP" Click="BtnOtpVerify_Click" Grid.Column="3" Width="Auto" VerticalAlignment="Center" Height="45" Grid.Row="3" FontSize="22"/>
         <Button x:Name="BtnUnsafeExit" Content="Exit (Unsafe)" Click="BtnUnsafeExit_Click" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.Column="3" VerticalAlignment="Center" Grid.Row="5" Height="45" FontSize="22"/>
-        <TextBox x:Name="TxtOtp" TextWrapping="Wrap" Grid.Row="3" HorizontalContentAlignment="Left" VerticalAlignment="Center" Height="45" VerticalContentAlignment="Center" Grid.Column="1" HorizontalAlignment="Stretch" FontSize="22"/>
-        <Button x:Name="BtnExit" Content="Exit" Click="BtnExit_Click" Grid.Row="5" VerticalAlignment="Center" Height="45" Grid.Column="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="22"/>
-        <Label x:Name="LblStatus" Content="Status" Grid.Row="7" VerticalAlignment="Center" FontSize="22" HorizontalAlignment="Left" Grid.ColumnSpan="5"/>
+        <TextBox x:Name="TxtOtp" TextWrapping="Wrap" Grid.Row="3" HorizontalContentAlignment="Left" VerticalAlignment="Center" Height="45" VerticalContentAlignment="Center" FontSize="22" Grid.Column="1"/>
+        <Button x:Name="BtnExit" Content="Exit" Click="BtnExit_Click" Grid.Row="5" VerticalAlignment="Center" Height="45" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="22" Grid.Column="1" />
+        <Label x:Name="LblStatus" Content="Status" Grid.Row="7" VerticalAlignment="Center" FontSize="22" HorizontalAlignment="Left" Height="39"  Grid.ColumnSpan="5"/>
 
     </Grid>
 </Window>
