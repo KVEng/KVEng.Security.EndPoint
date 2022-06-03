@@ -14,11 +14,22 @@
             <ColumnDefinition Width="97*"/>
             <ColumnDefinition Width="52*"/>
         </Grid.ColumnDefinitions>
-        <Button x:Name="BtnExit" Content="Exit" HorizontalAlignment="Left" Margin="32,145,0,0" VerticalAlignment="Top" Click="BtnExit_Click" Grid.ColumnSpan="2" Width="116"/>
-        <TextBox x:Name="TxtOtp" HorizontalAlignment="Left" Margin="40,110,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.ColumnSpan="2"/>
-        <Button x:Name="BtnOtpVerify" Grid.Column="1" Content="Verify OTP" HorizontalAlignment="Left" Margin="121,110,0,0" VerticalAlignment="Top" Width="122" Click="BtnOtpVerify_Click"/>
-        <Button x:Name="BtnUnsafeExit" Grid.Column="1" Content="Exit (Unsafe)" HorizontalAlignment="Left" Margin="150,150,0,0" VerticalAlignment="Top" Width="93" Click="BtnUnsafeExit_Click"/>
-        <Label Content="KVEng Security EndPoint" HorizontalAlignment="Left" Margin="40,33,0,0" VerticalAlignment="Top" FontSize="24" FontWeight="Bold" Width="310" Grid.ColumnSpan="2"/>
+        <Grid Margin="30,25,582,569" Grid.ColumnSpan="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="19*"/>
+                <RowDefinition Height="21*"/>
+                <RowDefinition Height="24*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="383*"/>
+                <ColumnDefinition Width="401*"/>
+            </Grid.ColumnDefinitions>
+            <Label Content="KVEng Security EndPoint" HorizontalAlignment="Left" Margin="43,0,0,0" VerticalAlignment="Center" FontSize="24" FontWeight="Bold" Grid.ColumnSpan="2" Height="42" Width="290"/>
+            <TextBox x:Name="TxtOtp" TextWrapping="Wrap" Grid.Row="1" HorizontalContentAlignment="Left" VerticalAlignment="Center" Height="18"/>
+            <Button x:Name="BtnExit" Content="Exit" Click="BtnExit_Click" Grid.Row="2" VerticalAlignment="Center" Height="20"/>
+            <Button x:Name="BtnOtpVerify" Content="Verify OTP" Click="BtnOtpVerify_Click" Grid.Row="1" VerticalAlignment="Center" Grid.ColumnSpan="2" Height="20" Margin="183,0,0,0"/>
+            <Button x:Name="BtnUnsafeExit" Content="Exit (Unsafe)" Click="BtnUnsafeExit_Click" Grid.Row="2" VerticalAlignment="Center" Grid.ColumnSpan="2" Height="20" Margin="183,0,0,0"/>
+        </Grid>
 
     </Grid>
 </Window>
