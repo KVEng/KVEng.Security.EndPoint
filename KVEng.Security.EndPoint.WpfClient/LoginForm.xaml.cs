@@ -36,11 +36,24 @@ namespace KVEng.Security.EndPoint.WpfClient
         {
             PinIt();
         }
+
+        private void Window_SizeChanged(object sender, SizeChangedEventArgs e)
+        {
+            this.WindowState = WindowState.Maximized;
+        }
+
+        private void Window_StateChanged(object sender, EventArgs e)
+        {
+            this.WindowState = WindowState.Maximized;
+        }
+
         #endregion
         private void BtnExit_Click(object sender, RoutedEventArgs e)
         {
             ExitThis(true);
         }
+
+
 
         private void ExitThis(bool isSafe)
         {

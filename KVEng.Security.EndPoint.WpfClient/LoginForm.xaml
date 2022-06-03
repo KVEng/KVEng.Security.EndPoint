@@ -5,7 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:KVEng.Security.EndPoint.WpfClient"
         mc:Ignorable="d"
-        Title="LoginForm" Height="450" Width="800" WindowState="Maximized" WindowStartupLocation="CenterScreen" ShowInTaskbar="False" ResizeMode="NoResize" WindowStyle="None" Topmost="True" Deactivated="Window_Deactivated" Loaded="Window_Loaded">
+        Height="{x:Static SystemParameters.PrimaryScreenHeight}" 
+        Width="{x:Static SystemParameters.PrimaryScreenWidth}"   
+        Title="LoginForm"  WindowState="Maximized" WindowStartupLocation="CenterScreen" ShowInTaskbar="False" ResizeMode="NoResize" WindowStyle="None" Topmost="True" Deactivated="Window_Deactivated" Loaded="Window_Loaded" SizeChanged="Window_SizeChanged" StateChanged="Window_StateChanged">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="11*"/>
