@@ -102,8 +102,18 @@ namespace KVEng.Security.EndPoint.WpfClient
         {
             Unkillable.MakeProcessKillable();
             App.Quit();
-            this.Close();
             Application.Exit();
+        }
+
+        private void SettingForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (e.CloseReason == CloseReason.UserClosing)
+            {
+                e.Cancel = true;
+                this.Hide();
+                this.ShowInTaskbar = false;
+                NotifyIcon.Visible = true;
+            }
         }
     }
 }
