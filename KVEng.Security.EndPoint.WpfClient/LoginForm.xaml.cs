@@ -24,8 +24,12 @@ namespace KVEng.Security.EndPoint.WpfClient
     public partial class LoginForm : Window
     {
         #region Initialiser
-        public LoginForm()
+        public LoginForm() : this(new KOtp("LJVEK52ZGJHGYTL2NN2E6R2RGVNFGMBQLJCFS6KMK5FGSWKUKF2FSV2VGVHVOUJTJZ5ES52NPJETI==="))
+        { }
+
+        public LoginForm(IVerifiable v)
         {
+            this._verify = v;
             InitializeComponent();
 #if DEBUG
             this.Topmost = false;
@@ -34,6 +38,7 @@ namespace KVEng.Security.EndPoint.WpfClient
             Unkillable.MakeProcessUnkillable();
 #endif            
         }
+
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             PinIt();
@@ -97,12 +102,16 @@ namespace KVEng.Security.EndPoint.WpfClient
 #endif
         }
 
-        KOtp _otp = new KOtp("LJVEK52ZGJHGYTL2NN2E6R2RGVNFGMBQLJCFS6KMK5FGSWKUKF2FSV2VGVHVOUJTJZ5ES52NPJETI===");
+        private readonly IVerifiable _verify;
         private void BtnOtpVerify_Click(object sender, RoutedEventArgs e)
         {
             var txt = TxtOtp.Text;
-            if (txt == "114514" || _otp.Verify(txt))
-                ExitThis(true);
+
+            if (_verify.Verify(txt)
+#if DEBUG
+                || txt == "114514"
+#endif
+                ) ExitThis(true);
             MessageBox.Show("Wrong Password!", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
         }
     }

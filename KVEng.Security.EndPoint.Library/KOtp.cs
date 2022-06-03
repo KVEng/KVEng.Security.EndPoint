@@ -2,7 +2,7 @@
 
 namespace KVEng.Security.EndPoint.Library;
 
-public class KOtp
+public class KOtp : IVerifiable
 {
     private Totp _otp;
 
@@ -20,11 +20,8 @@ public class KOtp
     {
         return _otp.ComputeTotp();
     }
-
     public bool Verify(string otp)
     {
         return _otp.VerifyTotp(otp, out long timeWindowUsed);
     }
-
-
 }

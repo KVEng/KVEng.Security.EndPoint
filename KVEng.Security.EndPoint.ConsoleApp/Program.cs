@@ -19,7 +19,7 @@ LoopConsole(cmd =>
 
 static void Totp()
 {
-    KOtp _otp = null;
+    KOtp? _otp = null;
 
     LoopConsole(cmd =>
     {
