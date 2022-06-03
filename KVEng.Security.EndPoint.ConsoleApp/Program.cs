@@ -1,4 +1,4 @@
-﻿using KVEng.SecurityEndPoint.Library;
+﻿using KVEng.Security.EndPoint.Library;
 
 LoopConsole(cmd =>
 {

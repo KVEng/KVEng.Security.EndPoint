@@ -14,7 +14,7 @@ using System.Windows.Shapes;
 
 using WindowsDesktop;
 
-namespace KVEng.SecurityEndPoint.WpfClient
+namespace KVEng.Security.EndPoint.WpfClient
 {
     /// <summary>
     /// Interaction logic for LoginForm.xaml

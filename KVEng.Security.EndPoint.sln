@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.2.32526.322
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KVEng.SecurityEndPoint.Library", "KVEng.SecurityEndPoint.Library\KVEng.SecurityEndPoint.Library.csproj", "{552E6C6E-51AE-43B3-A661-A2C318EC421A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KVEng.Security.EndPoint.Library", "KVEng.Security.EndPoint.Library\KVEng.Security.EndPoint.Library.csproj", "{552E6C6E-51AE-43B3-A661-A2C318EC421A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KVEng.SecurityEndPoint.ConsoleApp", "KVEng.SecurityEndPoint.ConsoleApp\KVEng.SecurityEndPoint.ConsoleApp.csproj", "{2AA8DF11-A86C-4D4A-8107-16DC6D9E21A4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KVEng.Security.EndPoint.ConsoleApp", "KVEng.Security.EndPoint.ConsoleApp\KVEng.Security.EndPoint.ConsoleApp.csproj", "{2AA8DF11-A86C-4D4A-8107-16DC6D9E21A4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KVEng.SecurityEndPoint.WpfClient", "KVEng.SecurityEndPoint.WpfClient\KVEng.SecurityEndPoint.WpfClient.csproj", "{D65E00F2-1AFE-43C7-A421-986A4B8E1C0E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KVEng.Security.EndPoint.WpfClient", "KVEng.Security.EndPoint.WpfClient\KVEng.Security.EndPoint.WpfClient.csproj", "{D65E00F2-1AFE-43C7-A421-986A4B8E1C0E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

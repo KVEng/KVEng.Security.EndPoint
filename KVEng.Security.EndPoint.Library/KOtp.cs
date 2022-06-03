@@ -1,6 +1,6 @@
 ﻿using OtpNet;
 
-namespace KVEng.SecurityEndPoint.Library;
+namespace KVEng.Security.EndPoint.Library;
 
 public class KOtp
 {

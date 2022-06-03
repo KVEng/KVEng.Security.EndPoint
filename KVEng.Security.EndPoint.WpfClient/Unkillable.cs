@@ -6,7 +6,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace KVEng.SecurityEndPoint.WpfClient;
+namespace KVEng.Security.EndPoint.WpfClient;
 
 public static class Unkillable
 {

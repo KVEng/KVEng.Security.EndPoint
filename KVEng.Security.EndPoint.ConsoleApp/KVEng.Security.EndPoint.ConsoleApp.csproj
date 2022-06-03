@@ -8,7 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\KVEng.SecurityEndPoint.Library\KVEng.SecurityEndPoint.Library.csproj" />
+    <ProjectReference Include="..\KVEng.Security.EndPoint.Library\KVEng.Security.EndPoint.Library.csproj" />
   </ItemGroup>
 
 </Project>
