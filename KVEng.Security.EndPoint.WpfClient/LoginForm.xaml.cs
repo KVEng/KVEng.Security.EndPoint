@@ -56,12 +56,12 @@ namespace KVEng.Security.EndPoint.WpfClient
         }
 
         #endregion
+
+        #region Exiting
         private void BtnExit_Click(object sender, RoutedEventArgs e)
         {
             ExitThis(true);
         }
-
-
 
         private void ExitThis(bool isSafe)
         {
@@ -71,17 +71,29 @@ namespace KVEng.Security.EndPoint.WpfClient
 
             // Application.Current.Shutdown();
         }
+
         private void BtnUnsafeExit_Click(object sender, RoutedEventArgs e)
         {
             ExitThis(false);
         }
+        #endregion
 
+        #region Window Event
         private void Window_Deactivated(object sender, EventArgs e)
         {
             Window window = (Window)sender;
             window.Topmost = true;
             this.Activate();
         }
+
+        private void Window_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.System && e.SystemKey == Key.F4)
+            {
+                e.Handled = true;
+            }
+        }
+        #endregion
 
         private void PinIt()
         {
@@ -129,13 +141,6 @@ namespace KVEng.Security.EndPoint.WpfClient
 #endif
             return s;
         }
-        
-        private void Window_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.Key == Key.System && e.SystemKey == Key.F4)
-            {
-                e.Handled = true;
-            }
-        }
+
     }
 }

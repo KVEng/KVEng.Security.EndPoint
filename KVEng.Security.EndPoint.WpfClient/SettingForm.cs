@@ -32,12 +32,6 @@ namespace KVEng.Security.EndPoint.WpfClient
                 return;
             ShowLocker(v);
         }
-        
-        private void ShowLocker(IVerifiable v)
-        {
-            var l = new LoginForm(v);
-            l.ShowDialog();
-        }
 
         private void SettingForm_SizeChanged(object sender, EventArgs e)
         {
@@ -57,15 +51,16 @@ namespace KVEng.Security.EndPoint.WpfClient
             NotifyIcon.Visible = false;
         }
 
-        private void SafeQuit()
+        private void ShowLocker(IVerifiable v)
         {
-            Unkillable.MakeProcessKillable();
-            App.Quit();
-            Application.Exit();
+            var l = new LoginForm(v);
+            l.ShowDialog();
         }
 
+        #region Quit
         private void AddSystemEventTriger()
         {
+            /*
             SystemEvents.PowerModeChanged += (object s, PowerModeChangedEventArgs e) =>
             {
                 switch (e.Mode)
@@ -76,6 +71,7 @@ namespace KVEng.Security.EndPoint.WpfClient
                         break;
                 }
             };
+            */
 
             SystemEvents.SessionSwitch += (object sender, Microsoft.Win32.SessionSwitchEventArgs e) =>
             {
@@ -107,5 +103,13 @@ namespace KVEng.Security.EndPoint.WpfClient
                 NotifyIcon.Visible = true;
             }
         }
+
+        private void SafeQuit()
+        {
+            Unkillable.MakeProcessKillable();
+            App.Quit();
+            Application.Exit();
+        }
+        #endregion
     }
 }
