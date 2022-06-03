@@ -19,5 +19,10 @@ namespace KVEng.Security.EndPoint.WpfClient
             var form = new SettingForm();
             form.Show();
         }
+
+        public static void Quit()
+        {
+            Application.Current.Shutdown();
+        }
     }
 }

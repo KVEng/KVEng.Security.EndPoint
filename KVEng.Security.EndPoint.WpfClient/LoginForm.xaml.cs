@@ -67,7 +67,8 @@ namespace KVEng.Security.EndPoint.WpfClient
         {
             if (isSafe)
                 Unkillable.MakeProcessKillable();
-            Application.Current.Shutdown();
+            this.Close();
+            // Application.Current.Shutdown();
         }
         private void BtnUnsafeExit_Click(object sender, RoutedEventArgs e)
         {

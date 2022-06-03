@@ -28,9 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SettingForm));
             this.BtnGenOtp = new System.Windows.Forms.Button();
             this.BtnRunLocker = new System.Windows.Forms.Button();
+            this.NotifyIcon = new System.Windows.Forms.NotifyIcon(this.components);
             this.SuspendLayout();
             // 
             // BtnGenOtp
@@ -53,6 +55,13 @@
             this.BtnRunLocker.UseVisualStyleBackColor = true;
             this.BtnRunLocker.Click += new System.EventHandler(this.BtnRunLocker_Click);
             // 
+            // NotifyIcon
+            // 
+            this.NotifyIcon.Icon = ((System.Drawing.Icon)(resources.GetObject("NotifyIcon.Icon")));
+            this.NotifyIcon.Text = "KSE - Working";
+            this.NotifyIcon.Visible = true;
+            this.NotifyIcon.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.NotifyIcon_MouseDoubleClick);
+            // 
             // SettingForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 30F);
@@ -63,6 +72,8 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "SettingForm";
             this.Text = "SettingForm";
+            this.Load += new System.EventHandler(this.SettingForm_Load);
+            this.SizeChanged += new System.EventHandler(this.SettingForm_SizeChanged);
             this.ResumeLayout(false);
 
         }
@@ -71,5 +82,6 @@
 
         private System.Windows.Forms.Button BtnGenOtp;
         private System.Windows.Forms.Button BtnRunLocker;
+        private System.Windows.Forms.NotifyIcon NotifyIcon;
     }
 }
