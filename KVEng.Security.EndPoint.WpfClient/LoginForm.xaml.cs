@@ -101,9 +101,6 @@ namespace KVEng.Security.EndPoint.WpfClient
             {
                 this.Dispatcher.Invoke(() =>
                 {
-#if DEBUG
-                    MessageBox.Show("CurrentChanged!");
-#endif
                     if (!this.IsCurrentVirtualDesktop())
                         this.MoveToDesktop(VirtualDesktop.Current);
 #if RELEASE
