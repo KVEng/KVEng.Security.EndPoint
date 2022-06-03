@@ -12,6 +12,7 @@
 
   <ItemGroup>
     <None Remove="KSE-ban.png" />
+    <None Remove="KSE-logo.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -24,6 +25,7 @@
 
   <ItemGroup>
     <Resource Include="KSE-ban.png" />
+    <Resource Include="KSE-logo.png" />
   </ItemGroup>
 
 </Project>

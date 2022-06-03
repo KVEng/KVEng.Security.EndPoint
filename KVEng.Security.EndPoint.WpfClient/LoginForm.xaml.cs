@@ -31,6 +31,7 @@ namespace KVEng.Security.EndPoint.WpfClient
         {
             this._verify = v;
             InitializeComponent();
+            LblStatus.Content = GetAssemblyStatus();
 #if DEBUG
             this.Topmost = false;
 #endif
@@ -113,6 +114,18 @@ namespace KVEng.Security.EndPoint.WpfClient
 #endif
                 ) ExitThis(true);
             MessageBox.Show("Wrong Password!", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+        }
+
+        private string GetAssemblyStatus()
+        {
+            var s = $"{Environment.UserName}@{Environment.MachineName} {Environment.OSVersion} {System.Runtime.InteropServices.RuntimeInformation.FrameworkDescription}";
+#if DEBUG
+            s += " DEBUG";
+#endif
+#if RELEASE
+            s += " RELEASE";
+#endif
+            return s;
         }
     }
 }
