@@ -8,6 +8,7 @@
     <IncludeAllContentForSelfExtract>true</IncludeAllContentForSelfExtract>
 	  <IncludeNativeLibrariesForSelfExtract>true</IncludeNativeLibrariesForSelfExtract>
 	  <RuntimeIdentifiers>win10-x64</RuntimeIdentifiers>
+	  <UseWindowsForms>True</UseWindowsForms>
   </PropertyGroup>
 
   <ItemGroup>
@@ -16,6 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="QRCoder" Version="1.4.3" />
     <PackageReference Include="VirtualDesktop.WPF" Version="5.0.5" />
   </ItemGroup>
 

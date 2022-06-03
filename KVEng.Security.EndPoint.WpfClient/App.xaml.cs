@@ -13,5 +13,11 @@ namespace KVEng.Security.EndPoint.WpfClient
     /// </summary>
     public partial class App : Application
     {
+        protected override void OnStartup(StartupEventArgs e)
+        {
+            base.OnStartup(e);
+            var form = new SettingForm();
+            form.Show();
+        }
     }
 }

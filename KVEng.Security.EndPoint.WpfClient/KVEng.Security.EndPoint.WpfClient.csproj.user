@@ -10,12 +10,15 @@
     <Compile Update="LoginForm.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="QRCodeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="SettingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Page Update="LoginForm.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="MainWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
