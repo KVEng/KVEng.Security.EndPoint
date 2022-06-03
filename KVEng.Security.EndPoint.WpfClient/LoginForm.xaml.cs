@@ -68,6 +68,7 @@ namespace KVEng.Security.EndPoint.WpfClient
             if (isSafe)
                 Unkillable.MakeProcessKillable();
             this.Close();
+            
             // Application.Current.Shutdown();
         }
         private void BtnUnsafeExit_Click(object sender, RoutedEventArgs e)
@@ -114,7 +115,7 @@ namespace KVEng.Security.EndPoint.WpfClient
                 || txt == "114514"
 #endif
                 ) ExitThis(true);
-            MessageBox.Show("Wrong Password!", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            else MessageBox.Show("Wrong Password!", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
         }
 
         private string GetAssemblyStatus()

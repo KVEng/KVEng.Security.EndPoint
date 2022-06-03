@@ -1,13 +1,8 @@
 ﻿using KVEng.Security.EndPoint.Library;
 
+using Microsoft.Win32;
+
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace KVEng.Security.EndPoint.WpfClient
@@ -17,6 +12,7 @@ namespace KVEng.Security.EndPoint.WpfClient
         public SettingForm()
         {
             InitializeComponent();
+            AddSystemEventTriger();
         }
 
         private IVerifiable v;
@@ -25,17 +21,19 @@ namespace KVEng.Security.EndPoint.WpfClient
         {
             var bytes = Generator.GenerateRandomKey(20);
             v = new KOtp(bytes);
-            QRCodeForm qr = new QRCodeForm(bytes.Base32ToString());
+            var qr = new QRCodeForm(bytes.Base32ToString());
             qr.ShowDialog();
             qr.Dispose();
+            _login = new LoginForm(v);
+
         }
 
+        LoginForm _login;
         private void BtnRunLocker_Click(object sender, EventArgs e)
         {
-            if (v == null)
+            if (_login == null)
                 return;
-            LoginForm l = new LoginForm(v);
-            l.ShowDialog();
+            _login.ShowDialog();
         }
 
         private void SettingForm_SizeChanged(object sender, EventArgs e)
@@ -65,8 +63,38 @@ namespace KVEng.Security.EndPoint.WpfClient
         private void Quit()
         {
             this.Close();
-            
+
             App.Quit();
+        }
+
+        private void AddSystemEventTriger()
+        {
+            SystemEvents.PowerModeChanged += (object s, PowerModeChangedEventArgs e) =>
+            {
+                switch (e.Mode)
+                {
+                    case PowerModes.Resume:
+                        break;
+                    case PowerModes.Suspend:
+                        break;
+                }
+            };
+
+            SystemEvents.SessionSwitch += (object sender, Microsoft.Win32.SessionSwitchEventArgs e) =>
+            {
+                if (e.Reason == SessionSwitchReason.SessionLock)
+                {
+                    // Lock
+                    if (_login != null)
+                        _login.ShowDialog();
+                        
+                }
+                else if (e.Reason == SessionSwitchReason.SessionUnlock)
+                {
+                    //Unlock
+                }
+            };
+
         }
     }
 }

@@ -37,7 +37,7 @@
             // 
             // BtnGenOtp
             // 
-            this.BtnGenOtp.Location = new System.Drawing.Point(148, 235);
+            this.BtnGenOtp.Location = new System.Drawing.Point(12, 24);
             this.BtnGenOtp.Name = "BtnGenOtp";
             this.BtnGenOtp.Size = new System.Drawing.Size(225, 100);
             this.BtnGenOtp.TabIndex = 0;
@@ -47,7 +47,7 @@
             // 
             // BtnRunLocker
             // 
-            this.BtnRunLocker.Location = new System.Drawing.Point(470, 235);
+            this.BtnRunLocker.Location = new System.Drawing.Point(263, 24);
             this.BtnRunLocker.Name = "BtnRunLocker";
             this.BtnRunLocker.Size = new System.Drawing.Size(178, 106);
             this.BtnRunLocker.TabIndex = 1;
