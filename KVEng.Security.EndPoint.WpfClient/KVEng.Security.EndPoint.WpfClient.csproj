@@ -14,4 +14,8 @@
     <PackageReference Include="VirtualDesktop.WPF" Version="5.0.5" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\KVEng.Security.EndPoint.Library\KVEng.Security.EndPoint.Library.csproj" />
+  </ItemGroup>
+
 </Project>

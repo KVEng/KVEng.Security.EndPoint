@@ -1,4 +1,6 @@
-﻿using System;
+﻿using KVEng.Security.EndPoint.Library;
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -95,9 +97,11 @@ namespace KVEng.Security.EndPoint.WpfClient
 #endif
         }
 
+        KOtp _otp = new KOtp("LJVEK52ZGJHGYTL2NN2E6R2RGVNFGMBQLJCFS6KMK5FGSWKUKF2FSV2VGVHVOUJTJZ5ES52NPJETI===");
         private void BtnOtpVerify_Click(object sender, RoutedEventArgs e)
         {
-            if (TxtOtp.Text == "114514")
+            var txt = TxtOtp.Text;
+            if (txt == "114514" || _otp.Verify(txt))
                 ExitThis(true);
             MessageBox.Show("Wrong Password!", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
         }
