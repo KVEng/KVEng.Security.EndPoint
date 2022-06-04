@@ -58,6 +58,7 @@ namespace KVEng.Security.EndPoint.WpfClient
         #endregion
 
         #region Exiting
+        bool isExit = false;
         private void BtnExit_Click(object sender, RoutedEventArgs e)
         {
             ExitThis(true);
@@ -65,6 +66,7 @@ namespace KVEng.Security.EndPoint.WpfClient
 
         private void ExitThis(bool isSafe)
         {
+            isExit = true;
             if (isSafe)
                 Unkillable.MakeProcessKillable();
             this.Close();
@@ -75,6 +77,11 @@ namespace KVEng.Security.EndPoint.WpfClient
         private void BtnUnsafeExit_Click(object sender, RoutedEventArgs e)
         {
             ExitThis(false);
+        }
+
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            if (!isExit) e.Cancel = true;
         }
         #endregion
 
@@ -138,6 +145,5 @@ namespace KVEng.Security.EndPoint.WpfClient
 #endif
             return s;
         }
-
     }
 }
