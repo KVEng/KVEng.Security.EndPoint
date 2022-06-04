@@ -31,8 +31,6 @@ namespace KVEng.Security.EndPoint.WpfClient
 
         private void BtnRunLocker_Click(object sender, EventArgs e)
         {
-            if (v == null)
-                return;
             ShowLocker(v);
         }
 
@@ -54,9 +52,9 @@ namespace KVEng.Security.EndPoint.WpfClient
             NotifyIcon.Visible = false;
         }
 
-        private void ShowLocker(IVerifiable v)
+        private void ShowLocker(IVerifiable? v)
         {
-            var l = new LoginForm(v);
+            var l = v == null ? new LoginForm() : new LoginForm(v);
             l.ShowDialog();
         }
 
@@ -125,6 +123,11 @@ namespace KVEng.Security.EndPoint.WpfClient
             {
                 SafeQuit();
             }
+        }
+
+        private void TsmStartLocker_Click(object sender, EventArgs e)
+        {
+            ShowLocker(v);
         }
     }
 }

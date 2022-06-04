@@ -34,10 +34,11 @@
             this.BtnRunLocker = new System.Windows.Forms.Button();
             this.NotifyIcon = new System.Windows.Forms.NotifyIcon(this.components);
             this.MenuNotify = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.TsmKseName = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.TsmQuit = new System.Windows.Forms.ToolStripMenuItem();
             this.BtnQuit = new System.Windows.Forms.Button();
-            this.TsmKseName = new System.Windows.Forms.ToolStripMenuItem();
+            this.TsmStartLocker = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuNotify.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -75,9 +76,17 @@
             this.MenuNotify.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.TsmKseName,
             this.toolStripSeparator1,
+            this.TsmStartLocker,
             this.TsmQuit});
             this.MenuNotify.Name = "MenuNotify";
-            this.MenuNotify.Size = new System.Drawing.Size(271, 120);
+            this.MenuNotify.Size = new System.Drawing.Size(271, 156);
+            // 
+            // TsmKseName
+            // 
+            this.TsmKseName.Enabled = false;
+            this.TsmKseName.Name = "TsmKseName";
+            this.TsmKseName.Size = new System.Drawing.Size(270, 36);
+            this.TsmKseName.Text = "KSE";
             // 
             // toolStripSeparator1
             // 
@@ -101,12 +110,12 @@
             this.BtnQuit.UseVisualStyleBackColor = true;
             this.BtnQuit.Click += new System.EventHandler(this.BtnQuit_Click);
             // 
-            // TsmKseName
+            // TsmStartLocker
             // 
-            this.TsmKseName.Enabled = false;
-            this.TsmKseName.Name = "TsmKseName";
-            this.TsmKseName.Size = new System.Drawing.Size(270, 36);
-            this.TsmKseName.Text = "KSE";
+            this.TsmStartLocker.Name = "TsmStartLocker";
+            this.TsmStartLocker.Size = new System.Drawing.Size(270, 36);
+            this.TsmStartLocker.Text = "Start Locker";
+            this.TsmStartLocker.Click += new System.EventHandler(this.TsmStartLocker_Click);
             // 
             // SettingForm
             // 
@@ -136,5 +145,6 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripMenuItem TsmQuit;
         private System.Windows.Forms.ToolStripMenuItem TsmKseName;
+        private System.Windows.Forms.ToolStripMenuItem TsmStartLocker;
     }
 }
