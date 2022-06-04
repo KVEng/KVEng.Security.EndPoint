@@ -35,7 +35,7 @@ KSE, abbreviation for *KVEng Security EndPoint*, is one of the most easiest solu
 
 ## Screenshot
 
-![](img\locker.png)
+![](img/locker.png)
 
 ---
 
