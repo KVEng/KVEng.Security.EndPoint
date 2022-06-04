@@ -33,7 +33,12 @@
             this.BtnGenOtp = new System.Windows.Forms.Button();
             this.BtnRunLocker = new System.Windows.Forms.Button();
             this.NotifyIcon = new System.Windows.Forms.NotifyIcon(this.components);
+            this.MenuNotify = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.TsmQuit = new System.Windows.Forms.ToolStripMenuItem();
             this.BtnQuit = new System.Windows.Forms.Button();
+            this.TsmKseName = new System.Windows.Forms.ToolStripMenuItem();
+            this.MenuNotify.SuspendLayout();
             this.SuspendLayout();
             // 
             // BtnGenOtp
@@ -58,10 +63,33 @@
             // 
             // NotifyIcon
             // 
+            this.NotifyIcon.ContextMenuStrip = this.MenuNotify;
             this.NotifyIcon.Icon = ((System.Drawing.Icon)(resources.GetObject("NotifyIcon.Icon")));
             this.NotifyIcon.Text = "KSE - Working";
             this.NotifyIcon.Visible = true;
             this.NotifyIcon.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.NotifyIcon_MouseDoubleClick);
+            // 
+            // MenuNotify
+            // 
+            this.MenuNotify.ImageScalingSize = new System.Drawing.Size(28, 28);
+            this.MenuNotify.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.TsmKseName,
+            this.toolStripSeparator1,
+            this.TsmQuit});
+            this.MenuNotify.Name = "MenuNotify";
+            this.MenuNotify.Size = new System.Drawing.Size(271, 120);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(267, 6);
+            // 
+            // TsmQuit
+            // 
+            this.TsmQuit.Name = "TsmQuit";
+            this.TsmQuit.Size = new System.Drawing.Size(270, 36);
+            this.TsmQuit.Text = "Quit";
+            this.TsmQuit.Click += new System.EventHandler(this.TsmQuit_Click);
             // 
             // BtnQuit
             // 
@@ -72,6 +100,13 @@
             this.BtnQuit.Text = "Quit";
             this.BtnQuit.UseVisualStyleBackColor = true;
             this.BtnQuit.Click += new System.EventHandler(this.BtnQuit_Click);
+            // 
+            // TsmKseName
+            // 
+            this.TsmKseName.Enabled = false;
+            this.TsmKseName.Name = "TsmKseName";
+            this.TsmKseName.Size = new System.Drawing.Size(270, 36);
+            this.TsmKseName.Text = "KSE";
             // 
             // SettingForm
             // 
@@ -86,6 +121,7 @@
             this.Text = "SettingForm";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.SettingForm_FormClosing);
             this.SizeChanged += new System.EventHandler(this.SettingForm_SizeChanged);
+            this.MenuNotify.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -96,5 +132,9 @@
         private System.Windows.Forms.Button BtnRunLocker;
         private System.Windows.Forms.NotifyIcon NotifyIcon;
         private System.Windows.Forms.Button BtnQuit;
+        private System.Windows.Forms.ContextMenuStrip MenuNotify;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripMenuItem TsmQuit;
+        private System.Windows.Forms.ToolStripMenuItem TsmKseName;
     }
 }

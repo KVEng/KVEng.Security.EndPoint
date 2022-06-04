@@ -60,7 +60,7 @@ namespace KVEng.Security.EndPoint.WpfClient
             l.ShowDialog();
         }
 
-#region Quit
+        #region Quit
         private void AddSystemEventTriger()
         {
             /*
@@ -117,6 +117,14 @@ namespace KVEng.Security.EndPoint.WpfClient
             App.Quit();
             Application.Exit();
         }
-#endregion
+        #endregion
+
+        private void TsmQuit_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Are you sure to quit?", "Exit Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                SafeQuit();
+            }
+        }
     }
 }
