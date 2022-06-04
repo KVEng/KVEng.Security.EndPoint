@@ -90,7 +90,7 @@
             this.ClientSize = new System.Drawing.Size(647, 677);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "QRCodeForm";
-            this.Text = "QRCodeForm";
+            this.Text = "OTP QRCode";
             this.Load += new System.EventHandler(this.QRCodeForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.PicQR)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);

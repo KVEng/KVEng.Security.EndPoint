@@ -18,7 +18,7 @@ public partial class QRCodeForm : Form
     {
         InitializeComponent();
         var qrGenerator = new QRCodeGenerator();
-        var qrCodeData = qrGenerator.CreateQrCode(GenerateOtpUrl(content),  QRCodeGenerator.ECCLevel.Q);
+        var qrCodeData = qrGenerator.CreateQrCode(GenerateOtpUrl(content), QRCodeGenerator.ECCLevel.Q);
         var qrCode = new QRCode(qrCodeData);
         var qrImg = qrCode.GetGraphic(20)!;
         PicQR.Image = qrImg;
@@ -32,7 +32,13 @@ public partial class QRCodeForm : Form
 
     private void BtnOK_Click(object sender, EventArgs e)
     {
-        this.Close();
+        if (MessageBox.Show(
+            "Do you confirm you have added this OTP secret into your app?\n" +
+            "If you failed to add this, you may not able to verify.\n" +
+            "Continue?", "Warning", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning) == DialogResult.Yes)
+        {
+            this.Close();
+        }
     }
 
     private string GenerateOtpUrl(string secret)
