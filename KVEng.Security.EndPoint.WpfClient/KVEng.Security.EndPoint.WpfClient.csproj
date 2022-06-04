@@ -11,11 +11,19 @@
 	  <UseWindowsForms>True</UseWindowsForms>
 	  <ApplicationManifest>app.manifest</ApplicationManifest>
 	  <ApplicationIcon>kse.ico</ApplicationIcon>
+	  <Authors>KevinZonda Engineering</Authors>
+	  <Company>KevinZonda Engineering</Company>
+	  <Product>KVEng Security EndPoint</Product>
+	  <Description>MFA solution for Windows.</Description>
+	  <Copyright>Copyright © 2022 KevinZonda Engineering. All rights reserved.</Copyright>
+	  <PackageIcon>KSE-logo.png</PackageIcon>
+	  <PackageProjectUrl>https://github.com/KVEng/KVEng.Security.EndPoint</PackageProjectUrl>
+	  <RepositoryUrl>https://github.com/KVEng/KVEng.Security.EndPoint</RepositoryUrl>
+	  <RepositoryType>git</RepositoryType>
   </PropertyGroup>
 
   <ItemGroup>
     <None Remove="KSE-ban.png" />
-    <None Remove="KSE-logo.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -34,6 +42,13 @@
   <ItemGroup>
     <Resource Include="KSE-ban.png" />
     <Resource Include="KSE-logo.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="KSE-logo.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
   </ItemGroup>
 
 </Project>
