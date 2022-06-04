@@ -13,6 +13,9 @@ namespace KVEng.Security.EndPoint.WpfClient
         {
             InitializeComponent();
             AddSystemEventTriger();
+#if RELEASE
+            Unkillable.MakeProcessUnkillable();
+#endif
         }
 
         private IVerifiable? v;
@@ -57,7 +60,7 @@ namespace KVEng.Security.EndPoint.WpfClient
             l.ShowDialog();
         }
 
-        #region Quit
+#region Quit
         private void AddSystemEventTriger()
         {
             /*
@@ -95,7 +98,11 @@ namespace KVEng.Security.EndPoint.WpfClient
 
         private void SettingForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (e.CloseReason == CloseReason.UserClosing)
+            if (e.CloseReason == CloseReason.WindowsShutDown)
+            {
+                SafeQuit();
+            }
+            if (e.CloseReason != CloseReason.ApplicationExitCall)
             {
                 e.Cancel = true;
                 this.Hide();
@@ -110,6 +117,6 @@ namespace KVEng.Security.EndPoint.WpfClient
             App.Quit();
             Application.Exit();
         }
-        #endregion
+#endregion
     }
 }
