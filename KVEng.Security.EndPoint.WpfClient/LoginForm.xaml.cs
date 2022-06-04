@@ -24,8 +24,10 @@ namespace KVEng.Security.EndPoint.WpfClient
     public partial class LoginForm : Window
     {
         #region Initialiser
+        private readonly IVerifiable _verify;
         public LoginForm() : this(new KOtp("LJVEK52ZGJHGYTL2NN2E6R2RGVNFGMBQLJCFS6KMK5FGSWKUKF2FSV2VGVHVOUJTJZ5ES52NPJETI==="))
         { }
+
 
         public LoginForm(IVerifiable v)
         {
@@ -42,7 +44,7 @@ namespace KVEng.Security.EndPoint.WpfClient
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            PinIt();
+            StartPinForm();
             StartDisableTaskView();
         }
 
@@ -104,7 +106,20 @@ namespace KVEng.Security.EndPoint.WpfClient
         }
         #endregion
 
-        private void PinIt()
+        private void BtnOtpVerify_Click(object sender, RoutedEventArgs e)
+        {
+            var txt = TxtOtp.Text;
+
+            if (_verify.Verify(txt)
+#if DEBUG
+                || txt == "114514"
+#endif
+                ) ExitThis(true);
+            else MessageBox.Show("Wrong Password!", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+        }
+
+        #region Services need to be init
+        private void StartPinForm()
         {
             VirtualDesktop.Configure();
             VirtualDesktop.CurrentChanged += (_, args) =>
@@ -124,18 +139,20 @@ namespace KVEng.Security.EndPoint.WpfClient
 #endif
         }
 
-        private readonly IVerifiable _verify;
-        private void BtnOtpVerify_Click(object sender, RoutedEventArgs e)
+        TaskViewDisabler? _taskViewDisabler;
+        private void StartDisableTaskView()
         {
-            var txt = TxtOtp.Text;
-
-            if (_verify.Verify(txt)
-#if DEBUG
-                || txt == "114514"
-#endif
-                ) ExitThis(true);
-            else MessageBox.Show("Wrong Password!", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            if (_taskViewDisabler != null) _taskViewDisabler.Stop();
+            _taskViewDisabler = new TaskViewDisabler(100, this.GetHandle());
+            _taskViewDisabler.Start();
         }
+
+        private void StopDisableTaskView()
+        {
+            if (_taskViewDisabler != null)
+                _taskViewDisabler.Stop();
+        }
+        #endregion
 
         private string GetAssemblyStatus()
         {
@@ -147,19 +164,6 @@ namespace KVEng.Security.EndPoint.WpfClient
             s += " RELEASE";
 #endif
             return s;
-        }
-
-        TaskViewDisabler _taskViewDisabler;
-        private void StartDisableTaskView()
-        {
-            _taskViewDisabler = new TaskViewDisabler(100, this.GetHandle());
-            _taskViewDisabler.Start();
-        }
-
-        private void StopDisableTaskView()
-        {
-            if (_taskViewDisabler != null)
-                _taskViewDisabler.Stop();
         }
     }
 }
