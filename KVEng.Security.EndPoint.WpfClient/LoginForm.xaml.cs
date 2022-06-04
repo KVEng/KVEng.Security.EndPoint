@@ -106,6 +106,7 @@ namespace KVEng.Security.EndPoint.WpfClient
 
         private void PinIt()
         {
+            VirtualDesktop.Configure();
             VirtualDesktop.CurrentChanged += (_, args) =>
             {
                 this.Dispatcher.Invoke(() =>
