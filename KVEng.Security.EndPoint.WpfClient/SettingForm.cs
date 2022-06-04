@@ -54,7 +54,14 @@ namespace KVEng.Security.EndPoint.WpfClient
 
         private void ShowLocker(IVerifiable? v)
         {
-            var l = v == null ? new LoginForm() : new LoginForm(v);
+            var m = v;
+            if (m == null)
+            {
+                if (MessageBox.Show("IVerifiable is NULL, every string inputted will pass, continue?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.No)
+                    return;
+                m = new AllPass();
+            }
+            var l = new LoginForm(m);
             l.ShowDialog();
         }
 
