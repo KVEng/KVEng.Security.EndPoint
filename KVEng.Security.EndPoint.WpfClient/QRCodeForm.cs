@@ -36,7 +36,9 @@ public partial class QRCodeForm : Form
     }
 
     private string GenerateOtpUrl(string secret)
-    { 
-        return $"otpauth://totp/KSE@KSE?secret={secret}&issuer=KSE";
+    {
+        var username = Environment.UserName;
+        var pcname = Environment.MachineName;
+        return $"otpauth://totp/KSE:{username}@{pcname}?secret={secret}&issuer=KSE";
     }
 }
