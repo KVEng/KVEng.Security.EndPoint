@@ -43,6 +43,7 @@ namespace KVEng.Security.EndPoint.WpfClient
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             PinIt();
+            StartDisableTaskView();
         }
 
         private void Window_SizeChanged(object sender, SizeChangedEventArgs e)
@@ -69,6 +70,7 @@ namespace KVEng.Security.EndPoint.WpfClient
             isExit = true;
             if (isSafe)
                 Unkillable.MakeProcessKillable();
+            StopDisableTaskView();
             this.Close();
 
             // Application.Current.Shutdown();
@@ -144,6 +146,19 @@ namespace KVEng.Security.EndPoint.WpfClient
             s += " RELEASE";
 #endif
             return s;
+        }
+
+        TaskViewDisabler _taskViewDisabler;
+        private void StartDisableTaskView()
+        {
+            _taskViewDisabler = new TaskViewDisabler(100, this.GetHandle());
+            _taskViewDisabler.Start();
+        }
+
+        private void StopDisableTaskView()
+        {
+            if (_taskViewDisabler != null)
+                _taskViewDisabler.Stop();
         }
     }
 }
